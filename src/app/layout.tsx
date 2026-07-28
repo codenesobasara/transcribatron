@@ -27,8 +27,8 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
-        {process.env.NEXT_PUBLIC_VERCEL_ENV === "production" && <Analytics />}
-        {process.env.NEXT_PUBLIC_VERCEL_ENV === "production" && <SpeedInsights />}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

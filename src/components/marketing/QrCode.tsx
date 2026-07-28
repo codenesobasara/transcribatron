@@ -17,7 +17,7 @@ export function QrCode({ value, size = 160, className, label }: QrCodeProps) {
           value={value}
           size={size}
           bgColor="transparent"
-          fgColor="#151510"
+          fgColor="var(--color-ink)"
           level="M"
         />
       </div>

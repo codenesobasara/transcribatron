@@ -4,6 +4,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Nav } from "@/components/marketing/Nav";
+import { Footer } from "@/components/marketing/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-sans">
       <body>
-        {children}
+        <Nav />
+        <main>{children}</main>
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>

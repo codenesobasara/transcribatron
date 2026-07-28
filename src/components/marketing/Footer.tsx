@@ -23,7 +23,7 @@ export function Footer() {
               href={siteConfig.socials.x}
               className="hover:text-ink transition-colors"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               @transcribatron
             </a>

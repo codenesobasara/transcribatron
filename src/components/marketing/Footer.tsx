@@ -41,7 +41,7 @@ function FooterColumn({ title, links }: { title: string; links: readonly { href:
       <ul className="space-y-2 text-sm text-ink-2">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="hover:text-ink transition-colors">{l.label}</Link>
+            <Link href={l.href} prefetch={false} className="hover:text-ink transition-colors">{l.label}</Link>
           </li>
         ))}
       </ul>

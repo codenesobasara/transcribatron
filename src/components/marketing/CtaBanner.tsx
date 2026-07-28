@@ -1,0 +1,27 @@
+import { Container } from "@/components/layout/Container";
+import { AppStoreBadge } from "./AppStoreBadge";
+
+interface CtaBannerProps {
+  headline: string;
+  body?: string;
+  appStoreUrl?: string | null;
+  macAppStoreUrl?: string | null;
+  position?: string;
+}
+
+export function CtaBanner({ headline, body, appStoreUrl, macAppStoreUrl, position = "footer-cta" }: CtaBannerProps) {
+  return (
+    <section className="py-24 md:py-32 bg-ink text-bg">
+      <Container>
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="font-serif text-4xl md:text-5xl tracking-tight">{headline}</h2>
+          {body && <p className="mt-4 text-lg text-bg/80">{body}</p>}
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <AppStoreBadge platform="ios" href={appStoreUrl} position={position} />
+            <AppStoreBadge platform="mac" href={macAppStoreUrl} position={position} />
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}

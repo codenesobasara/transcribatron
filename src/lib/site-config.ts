@@ -8,7 +8,7 @@ export const siteConfig = {
     amount: 9.99,
     currency: "USD",
     displayShort: "$9.99",
-    displayLong: "$9.99 once — no subscription",
+    displayLong: "$9.99 once, no subscription",
   },
   nav: [
     { href: "/features", label: "Features" },

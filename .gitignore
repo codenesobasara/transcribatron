@@ -42,3 +42,10 @@ next-env.d.ts
 
 # superpowers scratch
 .superpowers/
+
+# claude code (local settings + worktrees)
+.claude/
+
+# playwright
+/test-results/
+/playwright-report/

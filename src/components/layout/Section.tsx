@@ -22,7 +22,7 @@ export function Section({
     <section
       className={cn(
         "py-20 md:py-28",
-        variant === "alt" ? "bg-surface-2" : "bg-bg",
+        variant === "alt" ? "bg-surface/55 backdrop-blur-sm" : "bg-transparent",
         className
       )}
       {...props}

@@ -1,11 +1,13 @@
 import { Hero } from "@/components/marketing/Hero";
-import { TrustStrip } from "@/components/marketing/TrustStrip";
-import { FeatureRow } from "@/components/marketing/FeatureRow";
+import { FeatureJourney } from "@/components/marketing/FeatureJourney";
+import { ComparisonTable } from "@/components/marketing/ComparisonTable";
+import { Reveal } from "@/components/marketing/Reveal";
 import { PricingCard } from "@/components/marketing/PricingCard";
 import { FaqAccordion } from "@/components/marketing/FaqAccordion";
 import { CtaBanner } from "@/components/marketing/CtaBanner";
 import { Section } from "@/components/layout/Section";
 import { featuresJourney } from "@/lib/copy/features";
+import { comparisonCompetitors, comparisonRows } from "@/lib/copy/comparison";
 import { landingFaq } from "@/lib/copy/faq";
 import { siteConfig } from "@/lib/site-config";
 
@@ -17,26 +19,22 @@ export default function HomePage() {
   return (
     <>
       <Hero appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} />
-      <TrustStrip
-        items={[
-          "On-device by default",
-          "No subscription",
-          "No ads",
-          "No tracking",
-        ]}
-      />
-      {featuresJourney.map((f, i) => (
-        <FeatureRow
-          key={f.number}
-          number={f.number}
-          title={f.title}
-          body={f.body}
-          bullets={f.bullets}
-          screenshot={f.screenshot}
-          align={i % 2 === 0 ? "left" : "right"}
-          variant={i % 2 === 1 ? "alt" : "default"}
-        />
-      ))}
+      <FeatureJourney items={featuresJourney} />
+      <Section variant="alt">
+        <Reveal className="text-center">
+          <div className="text-sm font-medium text-accent mb-3 tracking-wide uppercase">
+            How we compare
+          </div>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-ink">
+            Every workflow, one app
+          </h2>
+          <p className="mt-5 mb-12 text-lg text-ink-2 max-w-2xl mx-auto">
+            Others do a slice of this. Transcribatron does all of it, on-device, for
+            one price.
+          </p>
+          <ComparisonTable competitorNames={comparisonCompetitors} rows={comparisonRows} />
+        </Reveal>
+      </Section>
       <Section title="One price. That's it." eyebrow="Pricing">
         <PricingCard
           price={{ display: "$9.99", caption: "One-time purchase, lifetime access" }}

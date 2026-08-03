@@ -1,6 +1,6 @@
 # Transcribatron — Terms of Use
 
-**Effective date:** August 1, 2026
+**Effective date:** August 3, 2026
 
 These Terms of Use ("Terms") govern your use of the Transcribatron application
 for iOS and macOS ("the App"), published by Marc Maguire ("we", "us", "our").
@@ -55,6 +55,20 @@ confirm the current law for your situation yourself.
 
 You must be at least 13 years old, or the higher minimum age required where you
 live, to use the App.
+
+**Cloud AI features are 18+.** Everything the App does on your device —
+recording, transcription, on-device AI models, and on-device voices — is
+available at the age above. The cloud AI providers you can connect set their own age minimums, and
+some of them (currently including Google and ElevenLabs) require you to be 18.
+Google's API terms go further than most: they bar using the API as part of an
+application that is directed towards, or likely to be accessed by, people under
+18. If you are under 18, do not turn on cloud AI features or connect a provider
+key.
+
+Because you connect a provider using your own account and your own API key
+(section 4), that provider's age requirement is a term of **your** agreement
+with them. We cannot see, verify, or enforce it for them, and a provider may
+suspend your access with them if you do not meet it.
 
 ## 4. No accounts; bring-your-own AI key
 

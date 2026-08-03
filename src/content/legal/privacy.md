@@ -1,6 +1,6 @@
 # Transcribatron — Privacy Policy
 
-**Effective date:** August 1, 2026
+**Effective date:** August 3, 2026
 
 This Privacy Policy explains how the Transcribatron app for iOS and macOS ("the
 App"), published by Marc Maguire ("we", "us"), handles your information.
@@ -288,6 +288,14 @@ people, calls, or meetings. See the [Terms of Use](https://transcribatron.ca/ter
 The App is not directed to children. You must be at least 13 years old, or the
 higher minimum age required where you live, to use it. We do not knowingly
 collect personal information from children.
+
+**Cloud AI features are 18+.** On-device recording, transcription, on-device AI
+models, and on-device voices are available at the age above. Connecting a cloud
+AI provider is not:
+some providers (currently including Google and ElevenLabs) require you to be 18,
+and Google's terms bar use of its API in an app likely to be accessed by people
+under 18. That requirement runs between you and the provider whose key you
+supply — see the [Terms of Use](https://transcribatron.ca/terms) section 3.
 
 ## Your rights
 

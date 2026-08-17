@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Tailwind v4 does not auto-load tailwind.config.ts from `@import "tailwindcss"`.
+   Without this, none of the custom theme tokens (accent, surface, ink, sep,
+   fonts, max-w-container, hero sizes) are emitted as utilities. */
+@config "../../tailwind.config.ts";
+
 @layer base {
   :root {
     --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
@@ -9,35 +14,33 @@
 
   html {
     scroll-behavior: smooth;
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   body {
-    background-color: #FAF8F3;
+    background-color: #15130F;
     background-image:
       radial-gradient(
-        ellipse 55% 45% at 100% 0%,
-        rgba(255, 107, 0, 0.45) 0%,
+        ellipse 60% 50% at 100% 0%,
+        rgba(255, 107, 0, 0.20) 0%,
         rgba(255, 107, 0, 0) 55%
       ),
-      linear-gradient(
-        165deg,
-        rgba(255, 150, 60, 0.24) 0%,
-        rgba(255, 107, 0, 0.07) 40%,
-        rgba(255, 107, 0, 0.07) 60%,
-        rgba(255, 120, 20, 0.22) 100%
+      radial-gradient(
+        ellipse 50% 45% at 0% 100%,
+        rgba(255, 120, 20, 0.10) 0%,
+        rgba(255, 107, 0, 0) 50%
       );
     background-attachment: fixed;
     background-repeat: no-repeat;
-    color: #151510;
+    color: #FAF8F3;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background-color: #FFF1E5;
-    color: #151510;
+    background-color: #FF6B00;
+    color: #15130F;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -51,8 +54,8 @@
 @layer components {
   .phone-shadow {
     filter:
-      drop-shadow(0 30px 55px rgba(255, 107, 0, 0.32))
-      drop-shadow(0 12px 20px rgba(21, 19, 15, 0.15));
+      drop-shadow(0 28px 50px rgba(0, 0, 0, 0.55))
+      drop-shadow(0 0 60px rgba(255, 107, 0, 0.08));
   }
 
   /* Hero entrance choreography: phone rises in first, then the text stack
@@ -87,17 +90,68 @@
     animation: hero-rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
+  /* Hero callout pills. Centering lives on the wrapper (a static transform), so
+     these keyframes are free to own the button's transform: an intro pop, then
+     an infinite attention wiggle that mostly rests and periodically shimmies to
+     invite a click. Declared together so one `animation` drives both; the pill
+     sets per-animation delays inline (intro, then wiggle as the intro ends). */
+  @keyframes callout-in {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes callout-wiggle {
+    0%, 88%, 100% {
+      transform: rotate(0deg);
+    }
+    91% {
+      transform: rotate(-3.5deg);
+    }
+    94% {
+      transform: rotate(2.75deg);
+    }
+    97% {
+      transform: rotate(-1.5deg);
+    }
+  }
+
+  .callout-anim {
+    animation:
+      callout-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both,
+      callout-wiggle 3.2s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  @keyframes callout-line-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .callout-line-in {
+    animation: callout-line-in 0.5s ease-out both;
+  }
+
   /* Legal / support documents (privacy, terms, support). Plain, readable
      typography — readability beats branding here. Rendered from Markdown via
      src/lib/legal.ts, so styles target raw tags rather than utility classes. */
   .legal-prose {
-    color: #4A4740; /* ink-2 */
+    color: #B5AFA3; /* ink-2 */
     font-size: 1.0625rem;
     line-height: 1.7;
   }
 
   .legal-prose h1 {
-    color: #151510; /* ink */
+    color: #FAF8F3; /* ink */
     font-size: 2.25rem;
     line-height: 1.1;
     font-weight: 600;
@@ -106,7 +160,7 @@
   }
 
   .legal-prose h2 {
-    color: #151510;
+    color: #FAF8F3;
     font-size: 1.5rem;
     line-height: 1.25;
     font-weight: 600;
@@ -117,7 +171,7 @@
   }
 
   .legal-prose h3 {
-    color: #151510;
+    color: #FAF8F3;
     font-size: 1.1875rem;
     line-height: 1.3;
     font-weight: 600;
@@ -131,7 +185,7 @@
   }
 
   .legal-prose strong {
-    color: #151510;
+    color: #FAF8F3;
     font-weight: 600;
   }
 
@@ -142,7 +196,7 @@
   }
 
   .legal-prose a:hover {
-    color: #151510;
+    color: #FAF8F3;
   }
 
   .legal-prose ul {
@@ -161,7 +215,7 @@
 
   .legal-prose hr {
     border: 0;
-    border-top: 1px solid #EAE5DB; /* sep */
+    border-top: 1px solid #322D25; /* sep */
     margin: 2.5rem 0;
   }
 
@@ -176,15 +230,15 @@
 
   .legal-prose th,
   .legal-prose td {
-    border: 1px solid #EAE5DB; /* sep */
+    border: 1px solid #322D25; /* sep */
     padding: 0.625rem 0.875rem;
     text-align: left;
     vertical-align: top;
   }
 
   .legal-prose th {
-    color: #151510;
+    color: #FAF8F3;
     font-weight: 600;
-    background-color: #F3EFE7; /* surface-2 */
+    background-color: #2B261F; /* surface-2 */
   }
 }

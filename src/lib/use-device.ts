@@ -8,6 +8,15 @@ export function useDevice(): Device {
 
   useEffect(() => {
     if (typeof navigator === "undefined") return;
+
+    // Manual override for previewing a device shot on any machine:
+    // e.g. /?device=mac or /?device=iphone
+    const override = new URLSearchParams(window.location.search).get("device");
+    if (override === "mac" || override === "iphone") {
+      setDevice(override);
+      return;
+    }
+
     const ua = navigator.userAgent;
 
     if (/iPhone/.test(ua) || /iPad/.test(ua)) {

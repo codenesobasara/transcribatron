@@ -11,11 +11,11 @@ interface CtaBannerProps {
 
 export function CtaBanner({ headline, body, appStoreUrl, macAppStoreUrl, position = "footer-cta" }: CtaBannerProps) {
   return (
-    <section className="py-24 md:py-32 bg-ink text-bg">
+    <section className="py-24 md:py-32 bg-surface border-y border-sep text-ink">
       <Container>
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl tracking-tight">{headline}</h2>
-          {body && <p className="mt-4 text-lg text-bg/80">{body}</p>}
+          {body && <p className="mt-4 text-lg text-ink-2">{body}</p>}
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <AppStoreBadge platform="ios" href={appStoreUrl} position={position} />
             <AppStoreBadge platform="mac" href={macAppStoreUrl} position={position} />

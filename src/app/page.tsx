@@ -10,14 +10,27 @@ import { featuresJourney } from "@/lib/copy/features";
 import { comparisonCompetitors, comparisonRows } from "@/lib/copy/comparison";
 import { landingFaq } from "@/lib/copy/faq";
 import { siteConfig } from "@/lib/site-config";
+import { resolveDevice } from "@/lib/device";
+import { DeviceViewProvider } from "@/components/marketing/DeviceView";
 
-export default function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  // Server-side device detection picks the hero variant. `?device=` overrides
+  // it for previewing any device on any machine.
+  const deviceParam = (await searchParams).device;
+  const device = await resolveDevice(
+    typeof deviceParam === "string" ? deviceParam : undefined
+  );
+
   // App Store URLs come from Sanity siteSettings in Task 22. Until then, null.
   const appStoreUrl: string | null = null;
   const macAppStoreUrl: string | null = null;
 
   return (
-    <>
+    <DeviceViewProvider initial={device}>
       <Hero appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} />
       <FeatureJourney items={featuresJourney} />
       <Section variant="alt">
@@ -69,6 +82,6 @@ export default function HomePage() {
         macAppStoreUrl={macAppStoreUrl}
         position="landing-footer"
       />
-    </>
+    </DeviceViewProvider>
   );
 }

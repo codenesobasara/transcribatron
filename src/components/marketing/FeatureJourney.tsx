@@ -25,7 +25,7 @@ export function FeatureJourney({ items }: FeatureJourneyProps) {
       <Container>
         <div className="flex flex-col items-center text-center">
           {items.map((f, i) => (
-            <Reveal key={f.title} className="flex flex-col items-center">
+            <Reveal key={f.title} id={f.id} className="flex flex-col items-center scroll-mt-24">
               <h3 className="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-ink max-w-2xl">
                 {f.title}
               </h3>
@@ -41,7 +41,11 @@ export function FeatureJourney({ items }: FeatureJourneyProps) {
                 </ul>
               )}
               <Connector className="h-16 md:h-24 mt-8" />
-              <FeatureShot src={f.screenshot.src} alt={f.screenshot.alt} />
+              <FeatureShot
+                placeholderDevice={f.screenshot.device}
+                alt={f.screenshot.alt}
+                shots={f.shots}
+              />
               {i < items.length - 1 && <Connector className="h-16 md:h-24 mt-8" />}
             </Reveal>
           ))}

@@ -5,17 +5,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#FAF8F3",
-        surface: "#FFFFFF",
-        "surface-2": "#F3EFE7",
-        ink: "#151510",
-        "ink-2": "#4A4740",
-        "ink-3": "#8A867E",
+        // Dark theme — warm-ink canvas so the light product shots pop.
+        // Accent stays the exact app orange (#FF6B00, sampled from the shot).
+        bg: "#15130F",
+        surface: "#211D17",
+        "surface-2": "#2B261F",
+        ink: "#FAF8F3",
+        "ink-2": "#B5AFA3",
+        "ink-3": "#8B867C",
         accent: "#FF6B00",
-        "accent-soft": "#FFF1E5",
-        sep: "#EAE5DB",
-        positive: "#2E7D5B",
-        warning: "#B45309",
+        "accent-soft": "#2C1D10",
+        sep: "#322D25",
+        positive: "#4FBF8B",
+        warning: "#E0913F",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],

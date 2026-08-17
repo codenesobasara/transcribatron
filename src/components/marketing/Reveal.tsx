@@ -5,10 +5,12 @@ import { cn } from "@/lib/utils";
 interface RevealProps {
   children: React.ReactNode;
   className?: string;
+  /** Optional anchor id so the block can be an in-page scroll target. */
+  id?: string;
 }
 
 // Fades + rises its children into view the first time they're scrolled to.
-export function Reveal({ children, className }: RevealProps) {
+export function Reveal({ children, className, id }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
 
@@ -31,6 +33,7 @@ export function Reveal({ children, className }: RevealProps) {
   return (
     <div
       ref={ref}
+      id={id}
       className={cn(
         "transition-all duration-700 ease-out motion-reduce:transition-none",
         shown

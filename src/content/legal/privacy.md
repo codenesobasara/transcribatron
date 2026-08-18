@@ -103,9 +103,6 @@ they are:
 - **Calendar details of a linked meeting** — the event title, the agenda, and
   attendee names — when you run AI analysis on a meeting you linked to a
   calendar event. Those attendee names are other people's.
-- **A recipient's first name**, when you dictate into a supported mail app on
-  your Mac. The App reads it from the "To" field of the message you are
-  composing, so the greeting can address that person by name.
 
 That data is handled under **the provider's own privacy policy and terms**, not
 ours — we do not receive, store, or proxy it. Most providers' API tiers do not

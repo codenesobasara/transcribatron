@@ -79,12 +79,11 @@ connect an account you hold with a provider you choose — for example Anthropic
 OpenAI, Google, or xAI, or ElevenLabs for cloud voices — using an API key you
 obtained yourself. What travels **directly from your device to that provider**
 is the transcript or document text, along with the style instruction you chose,
-your custom vocabulary, any question you ask a transcript, calendar details of a
-linked meeting, and — when you dictate into a mail app on your Mac — the first
-name in the message's "To" field. If you turn on live coaching, the App sends
-portions of the in-progress transcript to your provider repeatedly during the
-meeting. The Privacy Policy sets this out in full. It never passes through us,
-and we cannot see, retrieve, or delete it.
+your custom vocabulary, any question you ask a transcript, and calendar details
+of a linked meeting. If you turn on live coaching, the App sends portions of the
+in-progress transcript to your provider repeatedly during the meeting. The
+Privacy Policy sets this out in full. It never passes through us, and we cannot
+see, retrieve, or delete it.
 
 Your use of any provider is a contract between **you and that provider**,
 governed by its terms and privacy policy, including its pricing, data-retention,

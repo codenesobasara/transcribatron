@@ -1,4 +1,4 @@
-# Transcribatron — Terms of Use
+# Transcribatron - Terms of Use
 
 **Effective date:** August 3, 2026
 
@@ -47,7 +47,7 @@ the line. Telling them is entirely up to you.
 
 We do not monitor what you record, we cannot see your recordings, and we accept
 no responsibility for recordings made in violation of applicable law. **Nothing
-in the App — including any in-app summary of recording laws — is legal advice.**
+in the App - including any in-app summary of recording laws - is legal advice.**
 Those materials are general information that may be incomplete or out of date;
 confirm the current law for your situation yourself.
 
@@ -56,8 +56,8 @@ confirm the current law for your situation yourself.
 You must be at least 13 years old, or the higher minimum age required where you
 live, to use the App.
 
-**Cloud AI features are 18+.** Everything the App does on your device —
-recording, transcription, on-device AI models, and on-device voices — is
+**Cloud AI features are 18+.** Everything the App does on your device -
+recording, transcription, on-device AI models, and on-device voices - is
 available at the age above. The cloud AI providers you can connect set their own age minimums, and
 some of them (currently including Google and ElevenLabs) require you to be 18.
 Google's API terms go further than most: they bar using the API as part of an
@@ -75,8 +75,8 @@ suspend your access with them if you do not meet it.
 The App does not require an account with us.
 
 Cloud AI features are **off unless you turn them on**. If you turn them on, you
-connect an account you hold with a provider you choose — for example Anthropic,
-OpenAI, Google, or xAI, or ElevenLabs for cloud voices — using an API key you
+connect an account you hold with a provider you choose - for example Anthropic,
+OpenAI, Google, or xAI, or ElevenLabs for cloud voices - using an API key you
 obtained yourself. What travels **directly from your device to that provider**
 is the transcript or document text, along with the style instruction you chose,
 your custom vocabulary, any question you ask a transcript, and calendar details
@@ -103,7 +103,7 @@ through Apple's in-app purchase system.
 
 All billing is handled by **Apple** under your Apple account and Apple's Media
 Services terms. We never receive or store your payment details. **Refunds are
-handled by Apple** under Apple's refund policies — request one through Apple. We
+handled by Apple** under Apple's refund policies - request one through Apple. We
 have no ability to charge or refund you directly.
 
 To confirm what you have purchased and unlock it across your devices, the App
@@ -111,9 +111,9 @@ uses a purchase-validation service (RevenueCat), as described in the
 [Privacy Policy](https://transcribatron.ca/privacy).
 
 "Lifetime" means for the lifetime of the App's availability on the App Store.
-It is a licence to the App as it exists and evolves — not a guarantee that any
+It is a licence to the App as it exists and evolves - not a guarantee that any
 individual feature will exist forever: features that depend on
-third parties — cloud AI providers, Apple frameworks, iCloud — may change or stop
+third parties - cloud AI providers, Apple frameworks, iCloud - may change or stop
 working if those third parties change, and we may add, change, or retire
 individual features over time. A version already installed keeps working as
 built. We will not revoke a purchase you have made.
@@ -133,12 +133,12 @@ Everything you record, and every transcript, summary, or note the App produces,
 
 Your recordings and transcripts are stored on your device and, whenever your
 device is signed in to iCloud, in your personal iCloud account under your
-agreement with Apple. Sync follows your device's iCloud setting — there is no
+agreement with Apple. Sync follows your device's iCloud setting - there is no
 separate switch inside the App. See the Privacy Policy.
 
 **You grant us no licence to your content, because we need none.** We do not
 receive, store, access, or process your recordings or transcripts on any server
-of ours — we operate no such servers. We cannot read your content, share it,
+of ours - we operate no such servers. We cannot read your content, share it,
 sell it, or train anything on it.
 
 ## 7. Backups and loss of data
@@ -148,9 +148,9 @@ hold no copy and cannot recover anything for you.** Deleting the App deletes
 your recordings, transcripts, and notes from that device.
 
 You are responsible for your own backups, whether through device backups or
-iCloud sync. We are not liable for loss of recordings, transcripts, or notes —
+iCloud sync. We are not liable for loss of recordings, transcripts, or notes -
 including loss caused by device failure or loss, deletion of the App, iCloud
-sync behaviour, or an interrupted or failed recording — except where the law
+sync behaviour, or an interrupted or failed recording - except where the law
 that applies to you does not allow us to exclude that liability.
 
 ## 8. Your responsibilities
@@ -165,7 +165,7 @@ You are solely responsible for:
   charges your provider bills you, and for complying with your provider's terms.
 - **Reviewing output.** See Section 9.
 
-## 9. AI output — accuracy and review
+## 9. AI output - accuracy and review
 
 AI features are provided to assist you, not to replace your judgment.
 
@@ -175,7 +175,7 @@ AI processing may invent, omit, or misstate facts ("hallucinations"), and
 summaries may misrepresent the source.
 
 AI output is a first draft, not a record. **Verify it against the original audio
-before relying on it, acting on it, sharing it, or sending it** — and do not
+before relying on it, acting on it, sharing it, or sending it** - and do not
 treat it as an accurate account of what any person said. You use AI output at
 your own risk.
 
@@ -186,7 +186,7 @@ productivity purposes only. They are **not** legal, medical, financial,
 accounting, tax, or other professional advice, and do not create any
 professional relationship.
 
-The App is not certified for use as an official record — of legal proceedings,
+The App is not certified for use as an official record - of legal proceedings,
 medical encounters, or anything else where accuracy carries legal or safety
 consequences. Do not use it as your only record of such a conversation.
 
@@ -196,7 +196,7 @@ Use the App only where lawful. Do not use it to record people covertly where
 consent is required, to harass, stalk, or surveil anyone, or to break
 obligations you owe to others such as a non-disclosure agreement or workplace
 policy. Do not resell, sublicense, reverse-engineer, or misrepresent the App as
-your own — except to the extent applicable law permits this despite the
+your own - except to the extent applicable law permits this despite the
 restriction.
 
 ## 12. Licence to use the App
@@ -265,7 +265,7 @@ reasonable legal costs arising from:
 - recordings you made without legally required notice or consent;
 - content you recorded, processed, or shared using the App in violation of
   another person's privacy, publicity, or intellectual-property rights; or
-- your violation of applicable law — including biometric-privacy law — in your
+- your violation of applicable law - including biometric-privacy law - in your
   use of the App.
 
 This obligation does not apply to claims caused by our own violation of these
@@ -280,8 +280,8 @@ the App after the updated effective date means the updated Terms apply to you.
 ## 18. Assignment
 
 You may not transfer your rights under these Terms. We may assign these Terms,
-in whole or in part, to a successor entity — including a corporation formed to
-continue publishing the App — or in connection with a merger, reorganization, or
+in whole or in part, to a successor entity - including a corporation formed to
+continue publishing the App - or in connection with a merger, reorganization, or
 sale of the App or its assets. Your rights under these Terms are unaffected by
 any such assignment.
 
@@ -306,8 +306,8 @@ refunds are Apple's (Section 5).
 
 If any provision of these Terms is found unenforceable, the rest remain in
 effect. Our failure to enforce a provision is not a waiver of it. Sections that
-by their nature should survive termination — including Sections 6, 7, 9, 10, 14,
-15, 16, and 19 — survive. These Terms, together with the Apple Standard EULA and
+by their nature should survive termination - including Sections 6, 7, 9, 10, 14,
+15, 16, and 19 - survive. These Terms, together with the Apple Standard EULA and
 the Privacy Policy, are the entire agreement between you and us regarding the
 App.
 

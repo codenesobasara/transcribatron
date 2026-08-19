@@ -30,18 +30,19 @@ to whom.
 - **System audio capture and the Screen Recording permission (macOS,
   optional).** To record an online meeting, the App can capture the audio your
   Mac is playing - the other people on the call - and mix it with your
-  microphone so both sides of the conversation are transcribed. macOS provides
-  no audio-only capture interface: the only way to record system audio is
-  through ScreenCaptureKit, which is governed by the **Screen Recording**
-  permission and requires a video stream to be configured even when only audio
-  is wanted. **The App does not record your screen.** It requests the minimum
-  video configuration the interface allows and discards every video frame
-  without reading it; no screenshot, image, video, or window content is
-  captured, examined, stored, or transmitted, and none is written to disk. The
-  only data kept is the audio, which is mixed with your microphone into the
-  recording for that meeting and stored on your device exactly like any other
-  recording. This is off by default and is used only while you are recording a
-  meeting with system-audio capture switched on.
+  microphone so both sides of the conversation are transcribed. ScreenCaptureKit
+  is the framework the App uses to capture system audio together with your
+  microphone in a single synchronized session; it is governed by the
+  **Screen Recording** permission and requires a video stream to be configured
+  even when only audio is wanted. **The App does not record your screen.** It
+  requests the minimum video configuration the interface allows and discards
+  every video frame without reading it; no screenshot, image, video, or window
+  content is captured, examined, stored, or transmitted, and none is written to
+  disk. The only data kept is the audio, which is mixed with your microphone
+  into the recording for that meeting and held on your device exactly like any
+  other recording - it is never uploaded, and it does not sync to iCloud. This
+  is off by default and is used only while you are recording a meeting with
+  system-audio capture switched on.
 - **Your AI provider API keys** are stored in the device Keychain. They are not
   transmitted to us. This includes any key you add for a cloud voice
   (text-to-speech) provider.

@@ -10,7 +10,7 @@ import { featuresJourney } from "@/lib/copy/features";
 import { comparisonCompetitors, comparisonRows } from "@/lib/copy/comparison";
 import { landingFaq } from "@/lib/copy/faq";
 import { siteConfig } from "@/lib/site-config";
-import { resolveDevice } from "@/lib/device";
+import { resolveDevice, resolveIsIos } from "@/lib/device";
 import { DeviceViewProvider } from "@/components/marketing/DeviceView";
 
 export default async function HomePage({
@@ -21,17 +21,20 @@ export default async function HomePage({
   // Server-side device detection picks the hero variant. `?device=` overrides
   // it for previewing any device on any machine.
   const deviceParam = (await searchParams).device;
-  const device = await resolveDevice(
-    typeof deviceParam === "string" ? deviceParam : undefined
-  );
+  const override = typeof deviceParam === "string" ? deviceParam : undefined;
+  const device = await resolveDevice(override);
 
-  // App Store URLs come from Sanity siteSettings in Task 22. Until then, null.
-  const appStoreUrl: string | null = null;
+  // iOS-only for now: badges link out only on actual iOS devices. Android and
+  // Windows get their own destinations later; the Mac App Store URL stays null
+  // until that listing exists.
+  const appStoreUrl = (await resolveIsIos(override)) ? siteConfig.appStoreUrl : null;
   const macAppStoreUrl: string | null = null;
+  // iPhone/iPad visitors don't need the Mac App Store badge.
+  const showMacBadge = device === "mac";
 
   return (
     <DeviceViewProvider initial={device}>
-      <Hero appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} />
+      <Hero appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} showMacBadge={showMacBadge} />
       <FeatureJourney items={featuresJourney} />
       <Section variant="alt">
         <Reveal className="text-center">
@@ -59,6 +62,7 @@ export default async function HomePage({
           ]}
           appStoreUrl={appStoreUrl}
           macAppStoreUrl={macAppStoreUrl}
+          showMacBadge={showMacBadge}
         />
         <div className="mt-12 text-center text-ink-2 max-w-2xl mx-auto">
           What you&apos;d pay elsewhere in a year:{" "}
@@ -80,6 +84,7 @@ export default async function HomePage({
         body="$9.99 once. Download for iPhone and Mac."
         appStoreUrl={appStoreUrl}
         macAppStoreUrl={macAppStoreUrl}
+        showMacBadge={showMacBadge}
         position="landing-footer"
       />
     </DeviceViewProvider>

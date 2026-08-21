@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/ui/button";
+import { NavDownloadButton } from "./NavDownloadButton";
 import { siteConfig } from "@/lib/site-config";
 
 export function Nav() {
@@ -11,9 +11,7 @@ export function Nav() {
           <Link href="/" className="font-semibold tracking-tight text-ink">
             {siteConfig.name}
           </Link>
-          <Button asChild variant="accent" size="sm">
-            <Link href="/download" prefetch={false}>Download</Link>
-          </Button>
+          <NavDownloadButton />
         </nav>
       </Container>
     </header>

@@ -8,13 +8,14 @@ import { DeviceSwitcher } from "../DeviceView";
 interface HeroVariantProps {
   appStoreUrl?: string | null;
   macAppStoreUrl?: string | null;
+  showMacBadge?: boolean;
 }
 
 // Desktop: copy/sticker/badges on the left, framed iPhone shot (with callout
 // pills) on the right. Mobile: compact price sticker beside the headline, then
 // paragraph → phone → device switcher → badges, sized to keep the header above
 // the fold. Default hero for phones + unknown mobile.
-export function HeroIphone({ appStoreUrl, macAppStoreUrl }: HeroVariantProps) {
+export function HeroIphone({ appStoreUrl, macAppStoreUrl, showMacBadge }: HeroVariantProps) {
   return (
     <section className="relative lg:min-h-[85vh] flex items-center pt-10 pb-14 md:py-24 overflow-hidden">
       <Container>
@@ -23,7 +24,7 @@ export function HeroIphone({ appStoreUrl, macAppStoreUrl }: HeroVariantProps) {
             <HeroCopy titleAside={<PriceSticker compact className="lg:hidden" />} />
             <div className="hidden lg:block">
               <PriceSticker />
-              <HeroCtas appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} />
+              <HeroCtas appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} showMacBadge={showMacBadge} />
               <DeviceSwitcher className="mt-8" />
             </div>
           </div>
@@ -35,7 +36,7 @@ export function HeroIphone({ appStoreUrl, macAppStoreUrl }: HeroVariantProps) {
           </div>
           <div className="lg:hidden flex flex-col items-center">
             <DeviceSwitcher />
-            <HeroCtas appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} />
+            <HeroCtas appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} showMacBadge={showMacBadge} />
           </div>
         </div>
       </Container>

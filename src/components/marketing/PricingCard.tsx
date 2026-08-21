@@ -6,9 +6,10 @@ interface PricingCardProps {
   includes: readonly string[];
   appStoreUrl?: string | null;
   macAppStoreUrl?: string | null;
+  showMacBadge?: boolean;
 }
 
-export function PricingCard({ price, includes, appStoreUrl, macAppStoreUrl }: PricingCardProps) {
+export function PricingCard({ price, includes, appStoreUrl, macAppStoreUrl, showMacBadge = true }: PricingCardProps) {
   return (
     <div className="rounded-2xl border border-sep bg-surface p-8 md:p-12 max-w-2xl mx-auto text-center shadow-sm">
       <div className="text-sm font-medium text-accent tracking-wide uppercase">Lifetime</div>
@@ -26,7 +27,7 @@ export function PricingCard({ price, includes, appStoreUrl, macAppStoreUrl }: Pr
 
       <div className="mt-10 flex flex-wrap justify-center gap-3">
         <AppStoreBadge platform="ios" href={appStoreUrl} position="pricing" />
-        <AppStoreBadge platform="mac" href={macAppStoreUrl} position="pricing" />
+        {showMacBadge && <AppStoreBadge platform="mac" href={macAppStoreUrl} position="pricing" />}
       </div>
     </div>
   );

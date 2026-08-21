@@ -4,6 +4,7 @@ export const siteConfig = {
   description:
     "Transcribe meetings, dictations and imports on your iPhone and Mac. Pay once. No subscription.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://transcribatron.com",
+  appStoreUrl: "https://apps.apple.com/app/id6760924349",
   price: {
     amount: 9.99,
     currency: "USD",

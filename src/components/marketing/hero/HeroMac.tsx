@@ -11,12 +11,13 @@ import heroMac from "../../../../Assets/Images/Mac hero image.png";
 interface HeroVariantProps {
   appStoreUrl?: string | null;
   macAppStoreUrl?: string | null;
+  showMacBadge?: boolean;
 }
 
 // Mac hero. Copy on the left; on wide desktop (xl+) a LARGE Mac window sits
 // beside it and bleeds off the right edge for scale, with callout pills
 // overlaid. Below `xl` the same window renders full-width in the flow instead.
-export function HeroMac({ appStoreUrl, macAppStoreUrl }: HeroVariantProps) {
+export function HeroMac({ appStoreUrl, macAppStoreUrl, showMacBadge }: HeroVariantProps) {
   return (
     <section className="relative xl:min-h-[85vh] flex items-center pt-10 pb-14 md:py-24 overflow-hidden">
       <Container className="relative z-10">
@@ -24,7 +25,7 @@ export function HeroMac({ appStoreUrl, macAppStoreUrl }: HeroVariantProps) {
           <HeroCopy titleAside={<PriceSticker compact className="xl:hidden" />} />
           <div className="hidden xl:block">
             <PriceSticker />
-            <HeroCtas appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} />
+            <HeroCtas appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} showMacBadge={showMacBadge} />
             <DeviceSwitcher className="mt-8" />
           </div>
           {/* Below wide-desktop the window can't bleed off the edge, so show it
@@ -44,7 +45,7 @@ export function HeroMac({ appStoreUrl, macAppStoreUrl }: HeroVariantProps) {
               <HeroCallouts callouts={heroCalloutsMac} />
             </div>
             <DeviceSwitcher className="mt-6" />
-            <HeroCtas appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} />
+            <HeroCtas appStoreUrl={appStoreUrl} macAppStoreUrl={macAppStoreUrl} showMacBadge={showMacBadge} />
           </div>
         </div>
       </Container>

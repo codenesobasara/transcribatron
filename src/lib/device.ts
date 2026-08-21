@@ -28,3 +28,15 @@ export async function resolveDevice(override?: string): Promise<Device> {
   if (device.type === "tablet") return "ipad";
   return "mac";
 }
+
+// True only on actual iOS devices. Deliberately NOT derived from
+// resolveDevice(): that maps every phone (including Android) to the iphone
+// hero, which must not gate App Store links. `?device=iphone|ipad` overrides
+// count as iOS so link behavior can be previewed on any machine.
+export async function resolveIsIos(override?: string): Promise<boolean> {
+  if (override === "iphone" || override === "ipad") return true;
+  if (override && OVERRIDES.has(override as Device)) return false;
+
+  const { os } = userAgent({ headers: await headers() });
+  return os.name === "iOS";
+}

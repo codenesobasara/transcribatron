@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { track } from "@vercel/analytics/react";
+import { ComingSoonDialog } from "./ComingSoonDialog";
+import { useIsApple } from "@/lib/platform-client";
 import { cn } from "@/lib/utils";
 
 interface AppStoreBadgeProps {
@@ -20,6 +22,7 @@ const BADGE = {
 export function AppStoreBadge({ platform, href, position = "unknown", size = "default", className }: AppStoreBadgeProps) {
   const badge = BADGE[platform];
   const disabled = !href;
+  const isApple = useIsApple();
   const height = size === "sm" ? 40 : 52;
 
   const img = (
@@ -36,6 +39,17 @@ export function AppStoreBadge({ platform, href, position = "unknown", size = "de
   );
 
   if (disabled) {
+    // Windows/Android visitors get the coming-soon dialog instead of a dead
+    // badge; Apple platforms without a link (Mac, pre-launch) stay inert.
+    if (!isApple) {
+      return (
+        <ComingSoonDialog position={position}>
+          <button type="button" aria-label={badge.alt} className="inline-flex cursor-pointer transition-opacity hover:opacity-80">
+            {img}
+          </button>
+        </ComingSoonDialog>
+      );
+    }
     return <span className="inline-flex" role="img" aria-label={badge.alt}>{img}</span>;
   }
 

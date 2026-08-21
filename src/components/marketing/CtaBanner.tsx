@@ -6,10 +6,11 @@ interface CtaBannerProps {
   body?: string;
   appStoreUrl?: string | null;
   macAppStoreUrl?: string | null;
+  showMacBadge?: boolean;
   position?: string;
 }
 
-export function CtaBanner({ headline, body, appStoreUrl, macAppStoreUrl, position = "footer-cta" }: CtaBannerProps) {
+export function CtaBanner({ headline, body, appStoreUrl, macAppStoreUrl, showMacBadge = true, position = "footer-cta" }: CtaBannerProps) {
   return (
     <section className="py-24 md:py-32 bg-surface border-y border-sep text-ink">
       <Container>
@@ -18,7 +19,7 @@ export function CtaBanner({ headline, body, appStoreUrl, macAppStoreUrl, positio
           {body && <p className="mt-4 text-lg text-ink-2">{body}</p>}
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <AppStoreBadge platform="ios" href={appStoreUrl} position={position} />
-            <AppStoreBadge platform="mac" href={macAppStoreUrl} position={position} />
+            {showMacBadge && <AppStoreBadge platform="mac" href={macAppStoreUrl} position={position} />}
           </div>
         </div>
       </Container>

@@ -53,7 +53,7 @@ export default async function HomePage({
       </Section>
       <Section title="One price. That's it." eyebrow="Pricing">
         <PricingCard
-          price={{ display: "$9.99", caption: "One-time purchase, lifetime access" }}
+          price={{ display: "$8.99", caption: "One-time purchase, lifetime access" }}
           includes={[
             "Everything above, forever",
             "On-device AI included, no per-minute fees",
@@ -73,7 +73,7 @@ export default async function HomePage({
             </span>
           ))}
           {" "}
-          <strong className="text-accent">Transcribatron $9.99. Once.</strong>
+          <strong className="text-accent">Transcribatron $8.99. Once.</strong>
         </div>
       </Section>
       <Section title="Questions, answered." eyebrow="FAQ" variant="alt">
@@ -81,7 +81,7 @@ export default async function HomePage({
       </Section>
       <CtaBanner
         headline="Say more. Spend less."
-        body="$9.99 once. Download for iPhone and Mac."
+        body="$8.99 once. Download for iPhone and Mac."
         appStoreUrl={appStoreUrl}
         macAppStoreUrl={macAppStoreUrl}
         showMacBadge={showMacBadge}

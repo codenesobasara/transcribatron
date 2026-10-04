@@ -24,7 +24,7 @@ function row(
 }
 
 export const comparisonRows: readonly ComparisonRow[] = [
-  row("One-time purchase available", yes("$9.99"), {
+  row("One-time purchase available", yes("$8.99"), {
     "Wispr Flow": no(),
     Superwhisper: yes("$249.99"),
     MacWhisper: yes("€64"),

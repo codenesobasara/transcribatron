@@ -28,7 +28,7 @@ export function PriceSticker({ compact = false, className }: PriceStickerProps) 
               compact ? "text-3xl" : "text-5xl md:text-6xl"
             )}
           >
-            $9.99
+            $8.99
           </span>
           <span
             className={cn(

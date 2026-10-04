@@ -3,7 +3,7 @@ import type { FaqItem } from "@/components/marketing/FaqAccordion";
 export const landingFaq: readonly FaqItem[] = [
   {
     q: "Is it really a one-time purchase?",
-    a: "Yes. $9.99 on the App Store, and you own it forever, including future updates. No subscription, no per-minute fees, no 'pro' tier.",
+    a: "Yes. $8.99 on the App Store, and you own it forever, including future updates. No subscription, no per-minute fees, no 'pro' tier.",
   },
   {
     q: "Does my audio leave my device?",
@@ -31,7 +31,7 @@ export const pricingFaq: readonly FaqItem[] = [
   ...landingFaq,
   {
     q: "Do you offer an education discount?",
-    a: "Not currently. At $9.99 for lifetime, we think the price is already student-friendly.",
+    a: "Not currently. At $8.99 for lifetime, we think the price is already student-friendly.",
   },
   {
     q: "Will future major versions cost extra?",

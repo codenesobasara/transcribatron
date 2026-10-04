@@ -6,10 +6,10 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://transcribatron.com",
   appStoreUrl: "https://apps.apple.com/app/id6760924349",
   price: {
-    amount: 9.99,
+    amount: 8.99,
     currency: "USD",
-    displayShort: "$9.99",
-    displayLong: "$9.99 once, no subscription",
+    displayShort: "$8.99",
+    displayLong: "$8.99 once, no subscription",
   },
   nav: [
     { href: "/features", label: "Features" },

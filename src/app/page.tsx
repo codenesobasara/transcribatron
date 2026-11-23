@@ -10,7 +10,7 @@ import { featuresJourney } from "@/lib/copy/features";
 import { comparisonCompetitors, comparisonRows } from "@/lib/copy/comparison";
 import { landingFaq } from "@/lib/copy/faq";
 import { siteConfig } from "@/lib/site-config";
-import { resolveDevice, resolveIsIos } from "@/lib/device";
+import { resolveDevice, resolveIsIos, resolveIsMac } from "@/lib/device";
 import { DeviceViewProvider } from "@/components/marketing/DeviceView";
 
 export default async function HomePage({
@@ -24,11 +24,14 @@ export default async function HomePage({
   const override = typeof deviceParam === "string" ? deviceParam : undefined;
   const device = await resolveDevice(override);
 
-  // iOS-only for now: badges link out only on actual iOS devices. Android and
-  // Windows get their own destinations later; the Mac App Store URL stays null
-  // until that listing exists.
-  const appStoreUrl = (await resolveIsIos(override)) ? siteConfig.appStoreUrl : null;
-  const macAppStoreUrl: string | null = null;
+  // Apple-only for now: badges link out on iOS devices and Macs. Android and
+  // Windows get their own destinations later (null → coming-soon dialog).
+  // The iOS badge is also live for "Mac" visitors because iPadOS Safari
+  // reports a Macintosh UA and would otherwise get a dead badge.
+  const isIos = await resolveIsIos(override);
+  const isMac = await resolveIsMac(override);
+  const appStoreUrl = isIos || isMac ? siteConfig.appStoreUrl : null;
+  const macAppStoreUrl = isMac ? siteConfig.macAppStoreUrl : null;
   // iPhone/iPad visitors don't need the Mac App Store badge.
   const showMacBadge = device === "mac";
 

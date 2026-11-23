@@ -40,3 +40,16 @@ export async function resolveIsIos(override?: string): Promise<boolean> {
   const { os } = userAgent({ headers: await headers() });
   return os.name === "iOS";
 }
+
+// True on Macs — and on iPadOS Safari, which reports a Macintosh UA. Both can
+// install from the same App Store listing, so treating them alike is correct
+// for link gating. Windows/Linux desktops share the `mac` hero but must not
+// get a Mac App Store link, hence the separate OS check. `?device=mac`
+// overrides count as Mac for previewing on any machine.
+export async function resolveIsMac(override?: string): Promise<boolean> {
+  if (override === "mac") return true;
+  if (override && OVERRIDES.has(override as Device)) return false;
+
+  const { os } = userAgent({ headers: await headers() });
+  return os.name === "Mac OS" || os.name === "macOS";
+}
